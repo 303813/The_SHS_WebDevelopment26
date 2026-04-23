@@ -23,15 +23,73 @@
 	background-color: #ff0000;
 }
 
-td{
-	padding:20px;
+td {
+	padding: 20px;
 }
 
-table{
+table {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-h1, h2, h3, h4, h5, h6{
-	text-align:center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-align: center;
+}
+
+.custom1 {
+	background-color: blue;
+	border-radius: 20px;
+	color: white;
+}
+
+.custom2 {
+	background-color: purple;
+	font-size: 18px;
+	padding: 10px 20px;
+}
+
+.custom3 {
+	background-color: orange;
+	border: 3px dashed black;
+}
+
+.title {
+	color: red;
+	font-family: 'Trebuchet MS', sans-serif;
+}
+
+.title-large {
+	font-size: 2rem;
+}
+
+.title-small {
+	font-size: 0.5rem;
+}
+
+.button-largeRadius {
+	border-radius: 30px;
+}
+
+.button-smallRadius {
+	border-radius: 5px;
+}
+
+#hireButtons {
+	background-color: lightgray;
+	padding: 20px;
+}
+
+#footerTable {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+* {
+	font-family: Arial, sans-serif;
 }
