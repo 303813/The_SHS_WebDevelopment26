@@ -33,6 +33,7 @@ body {
     font-size: 30%;
     background-color: #4384e5;
     border-radius: 4px; 
+    text-wrap: nowrap; 
 }
 /* Remove default list styling and use Flexbox */
 .nav-item {
@@ -55,4 +56,26 @@ body {
 .nav-item a:hover {
   background-color: #575757;
   border-radius: 4px;
+}
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+h1 {
+    font-family: "Marker Felt", "Comic Sans MS", fantasy;
+    color: #46cb4f;
+    text-align: center;
+}
+p{
+    font-family: "Marker Felt", "Comic Sans MS", fantasy;
+    color: #0f25e9;
+    text-align: center;
 }
