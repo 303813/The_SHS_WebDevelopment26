@@ -40,28 +40,26 @@ h1, h2, h3, h4, h5, h6{
 a:hover {
   color: red;
   text-decoration: underline;
-  /* 1. Shrinks the button when you actually click it */
+}
 button:active {
   transform: scale(0.95);
 }
 
-/* 2. Changes the bullet emoji when you click the list item */
 li:active::marker {
   content: "🔥 ";
 }
 
-/* 3. Changes the border color of a button when you click it (Focus) */
 button:focus {
   border: 3px solid white;
 }
 
 }
 .button:hover {
-  color: red !important; /* This forces the text to turn red */
-  background-color: red !important; /* This forces the box to turn red */
+  color: red !important; 
+  background-color: red !important; 
   opacity: 0.8;
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(0.95);
 }
 .title {
   color: red;
@@ -82,10 +80,6 @@ button:focus {
   border: 2px solid red;
 }
 
-#footerTable {
-  background-color: lightgray;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -98,6 +92,6 @@ p + * {
 div li::marker {
   content: "😜 ";
 }
-#hireButtons td:hover {
+#rainbow td:hover {
   background-color: black;
 }
