@@ -19,3 +19,10 @@ th {
 	color: #ffffff;
 	background-color: #003366;
 }
+
+body {
+	background-image: url(/Users/234477/Desktop/WebDev\ 2026/The_SHS_WebDevelopment26/Version3.0/user13.html/images/woodbackground.jpg );
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
