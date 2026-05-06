@@ -93,8 +93,12 @@ h6 {
 	width: 100%;
 	color: #333;
 }
-
+<p> 
 *{
     text-align:center;
     border: 2px dashed green;
+}
+
+img {
+  width: 100%;
 }
