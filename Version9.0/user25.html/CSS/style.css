@@ -1,5 +1,5 @@
 .hero {
-  background-image: url("images/landscaping.jpg");
+  background-image: url("../images/landscaping.jpg");
   background-size: cover;
   background-position: center;
   min-height: 90vh;
@@ -7,7 +7,7 @@
 }
 
 .about-hero {
-  background-image: url("images/grass.jpg");
+  background-image: url("../images/grass.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -161,4 +161,18 @@ form input {
   background-position: center;
   min-height: 100vh;
   padding: 60px 0;
+}
+
+
+
+
+
+.contact-card{
+    background-color:#0D0D0D;
+    border:2px solid #083806;
+    transition:.3s;
+}
+
+.contact-card:hover{
+    transform:translateY(-6px);
 }
