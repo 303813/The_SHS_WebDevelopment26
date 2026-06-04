@@ -1,5 +1,5 @@
 .hero {
-  background-image: url("../images/landscaping.jpg");
+  background-image: url("images/landscaping.jpg");
   background-size: cover;
   background-position: center;
   min-height: 90vh;
@@ -7,7 +7,7 @@
 }
 
 .about-hero {
-  background-image: url("../images/grass.jpg");
+  background-image: url("images/grass.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
