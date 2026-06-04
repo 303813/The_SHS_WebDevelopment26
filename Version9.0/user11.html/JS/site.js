@@ -39,6 +39,94 @@ const travelTips = [
   'Use weather data to plan outdoor activities safely.'
 ];
 
+const resourceTopics = [
+  {
+    id: 'healthy-travel',
+    title: 'Healthy travel habits',
+    description: 'Free tips for hydration, movement, restful stops, and mindful pacing during road trips.',
+    resources: [
+      'Hydration checklist for long drives',
+      'Stretching breaks for every 90 miles',
+      'Simple comfort packing strategies'
+    ],
+    tier: 'free',
+    ctaLink: 'resources.html#healthy-travel'
+  },
+  {
+    id: 'nutrition-road',
+    title: 'Nutrition on the road',
+    description: 'Premium nutrition guides for planning snacks, healthy meals, and energy management while traveling.',
+    resources: [
+      'Balanced snack ideas for travel days',
+      'Meal prep checklist for weekend trips',
+      'Portable nutrition tips for families'
+    ],
+    tier: 'premium',
+    ctaLink: 'login.html'
+  },
+  {
+    id: 'mindful-wellness',
+    title: 'Mindful wellness guides',
+    description: 'Free wellness prompts to help travelers stay calm, focused, and energized while on the move.',
+    resources: [
+      'Mindful breathing exercises',
+      'Road trip journaling prompts',
+      'Simple recovery routines'
+    ],
+    tier: 'free',
+    ctaLink: 'resources.html#mindful-wellness'
+  },
+  {
+    id: 'planner-subscription',
+    title: 'Subscription-level planner guides',
+    description: 'Premium planning resources that support a membership model with deeper resources and links.',
+    resources: [
+      'Premium route review template',
+      'In-depth wellness and nutrition workbook',
+      'Subscriber-only destination checklist'
+    ],
+    tier: 'premium',
+    ctaLink: 'login.html'
+  }
+];
+
+function isLoggedIn() {
+  return localStorage.getItem('tripHubLoggedIn') === 'true';
+}
+
+function createResourceCard(topic) {
+  const loggedIn = isLoggedIn();
+  const locked = topic.tier === 'premium' && !loggedIn;
+  const col = document.createElement('div');
+  col.className = 'col-md-6 col-xl-4';
+  col.innerHTML = `
+    <div class="card h-100 resource-card ${topic.tier === 'premium' ? 'premium-card' : 'free-card'} ${locked ? 'locked' : ''}">
+      <div class="card-body position-relative">
+        <span class="badge ${topic.tier === 'premium' ? 'bg-warning text-dark' : 'bg-success'} mb-3">${topic.tier === 'premium' ? 'Premium' : 'Free'}</span>
+        <h3 class="card-title">${topic.title}</h3>
+        <p class="card-text text-muted">${topic.description}</p>
+        <ul class="mb-3">
+          ${topic.resources.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+        <a href="${locked ? 'login.html' : topic.ctaLink}" class="btn ${topic.tier === 'premium' ? 'btn-outline-light' : 'btn-primary'} w-100 resource-cta">
+          ${locked ? 'Login to unlock' : 'View resources'}
+        </a>
+        ${locked ? '<div class="premium-note mt-3">Premium content is unlocked when you sign in.</div>' : ''}
+      </div>
+    </div>
+  `;
+  return col;
+}
+
+function renderResources() {
+  const resourcesGrid = document.getElementById('resourcesGrid');
+  if (!resourcesGrid) {
+    return;
+  }
+  resourcesGrid.innerHTML = '';
+  resourceTopics.forEach((topic) => resourcesGrid.appendChild(createResourceCard(topic)));
+}
+
 function setActiveNav() {
   const path = window.location.pathname.split('/').pop();
   document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
@@ -216,6 +304,7 @@ function initPage() {
   renderFeaturedTrips();
   updateTravelTip();
   renderDestinationHighlights();
+  renderResources();
 
   const plannerForm = document.getElementById('plannerForm');
   if (plannerForm) {
