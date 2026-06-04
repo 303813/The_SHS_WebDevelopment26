@@ -1,4 +1,6 @@
+
 function texasTech() {
+  
 alert("Texas Tech Red Raiders")
 }
 
@@ -34,4 +36,40 @@ function bigImg(x) {
 function normalImg(x) {
   x.style.height = "35px";
   x.style.width = "35px";
+}
+
+function favoriteTeam(){
+ const userIn = document.getElementById("teamType").value;
+ if (userIn == "Jets"){
+  alert("Approved (Best Team)")
+ }
+
+ if (userIn == "Cowboys"){
+  alert("Approved")
+ }
+
+ if (userIn == "Eagles"){
+  alert("Approved")
+ }
+
+ if (userIn == "Giants"){
+  alert("Not the best NY team")
+
+ }
+
+if (userIn == "Commanders"){
+  alert("Approved")
+ }
+
+ if (userIn == "Bills"){
+ window.location = 'https://www.google.com';
+ }
+
+  if (userIn == "Dolphins"){
+ window.location = 'https://www.google.com';
+ }
+ 
+  if (userIn == "Patriots"){
+ window.location = 'https://www.google.com';
+ }
 }
